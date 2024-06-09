@@ -4,20 +4,25 @@ import { Modal, ModalHeader,ModalBody, List, ModalFooter,Button } from 'reactstr
 const ViewModal = ({modal, setModal, job}) => {
     const toggle = () => setModal(!modal)
   return (
-    <Modal isOpen={modal} toggle={toggle} className="custom-modal"
-    backdropClassName="custom-modal-backdrop">
+    <Modal isOpen={modal} toggle={toggle} centered="true" backdropClassName='custom-modal-backdrop' backdrop={true}>
     {job ? (<>
-        <ModalHeader toggle={toggle}>{job.customerName}</ModalHeader>
+        <ModalHeader toggle={toggle}>Job Details</ModalHeader>
         <ModalBody>
             <List type="unstyled">
                 <li>
-                    Job Type: {job.jobType}
+                    <strong>Customer Name: </strong>{job.customerName}
                 </li>
                 <li>
-                    Status: {job.status}
+                    <strong>Job Type: </strong>{job.jobType}
                 </li>
                 <li>
-                    Technicial: {job.technician}
+                    <strong>Status: </strong>{job.status}
+                </li>
+                <li>
+                    <strong>Technicial: </strong>{job.technician}
+                </li>
+                <li>
+                    <strong>Appointment Date: </strong>{job.appointmentDate}
                 </li>
             </List>
         </ModalBody>

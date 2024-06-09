@@ -12,8 +12,7 @@ const Footer = () => {
         <small>
             <a className="nav-link" href="#home"></a> 
             <a className="nav-link" href="#home"></a> 
-            <a className="nav-link" href="#home"></a> 
-            <a className="nav-link" href="/create-job">Create Job</a>    
+            <a className="nav-link" href="#home"></a>  
         </small>
 
 

@@ -2,8 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { baseURL } from '../data/baseUrl'
 import { Alert, Button } from 'reactstrap'
 import ViewModal from './ViewModal'
+import EditForm from './EditForm'
+import DeleteItem from './DeleteItem'
+import { useNavigate } from 'react-router-dom'
 
 const BrowseJobs = () => {
+    const navigate = useNavigate();
     const [jobs, setJobs] = useState([])
     const [viewModal, setViewModal] = useState(false)
     const [editModal, setEditModal] = useState(false)
@@ -19,14 +23,14 @@ const BrowseJobs = () => {
             setJobs(data);
         }
         getJobs();
-    },[])
+    },[editModal, viewModal, deleteModal])
     return (
         <div className='container browsejob'>
+        <Button className='mb-4' color="primary" onClick={()=>navigate('/create-job')}>Create New Job</Button>
 
             <table className="table table-striped">
                 <thead>
                     <tr>
-
                         <th scope="col">Id</th>
                         <th scope="col">Customer Name</th>
                         <th scope="col">Job Type</th>
@@ -46,18 +50,22 @@ const BrowseJobs = () => {
                             <td>{job.status}</td>
                             <td>{job.technician}</td>
                             <td>
-                                <span>Edit</span>
-                                <span className='px-3'>Delete</span>
-                                <Button onClick={()=>{
+                                <Button color="success" onClick={()=>{
                                     setCurrentJob(job)
                                     setViewModal(true)
-                                }
-                                    }
-                                    >
-                                    View
-                                </Button>
+                                }}>View</Button>
+                                <Button className='mx-3' color='warning' onClick={()=>{
+                                    setCurrentJob(job)
+                                    setEditModal(true)
+                                }}>Edit</Button>
+                                <Button  color='danger' onClick={()=>{
+                                    setCurrentJob(job)
+                                    setDeleteModal(true)
+                                }}>Delete</Button>
                             </td>
                             <ViewModal modal={viewModal} setModal={setViewModal} job={currentJob} />
+                            <EditForm modal={editModal} setModal={setEditModal} job={currentJob} />
+                            <DeleteItem modal={deleteModal} setModal={setDeleteModal} job={currentJob} />
                         </tr>
                     )}
                 )   
