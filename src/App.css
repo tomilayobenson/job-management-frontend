@@ -1,38 +1,23 @@
-.App {
-  text-align: center;
+.browsejob {
+  height: 53vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.footer, small {
+  width: 100%;
+  background-color: black;
+  color: #fff;
+  height: 10vh;
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.custom-modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* Adjust the alpha value to make it more or less transparent */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.custom-modal {
+  background-color: rgba(255, 255, 255, 0.9); /* Make the modal itself slightly transparent if desired */
 }
+
