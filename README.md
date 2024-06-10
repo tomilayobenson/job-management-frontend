@@ -2,6 +2,16 @@
 
 This is the frontend application for the job management system. It provides a user-friendly interface for interacting with the backend API to perform various job-related actions.
 
+## Getting Started
+
+Follow the instructions below to set up and run the frontend application locally:
+
+1. On any directory on your machine, clone this repository.
+2. Navigate to the `job-management-frontend` directory using the command: `cd job-management-frontend`
+3. Install dependencies: `npm install`.
+4. Start the development server: `npm start`.
+5. Open your browser and visit `http://localhost:3000` to view the application.
+
 ## Features
 
 - **Listing All Jobs:** Displaying a list of all available jobs on landing page.
@@ -19,13 +29,3 @@ This is the frontend application for the job management system. It provides a us
 - fetch function: For making HTTP requests to the backend API.
 - formik: Form management library for building and validating forms.
 - reactstrap and bootstrap: Bootstrap is a frontend framework for quickly spinning up responsive and modern websites. Reactstrap is a React components library based on Bootstrap for UI components. A combination of these 2 libraries were used for the site design.
-
-## Getting Started
-
-Follow the instructions below to set up and run the frontend application locally:
-
-1. On any directory on your machine, clone this repository.
-2. Navigate to the `job-management-frontend` directory using the command: `cd job-management-frontend`
-3. Install dependencies: `npm install`.
-4. Start the development server: `npm start`.
-5. Open your browser and visit `http://localhost:3000` to view the application.
