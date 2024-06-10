@@ -13,7 +13,7 @@ const DeleteItem = ({modal, setModal, job}) => {
         if (!response.ok) {
             setSuccess("")
             setFailure("Unable to delete item")
-            throw Error(response.message);
+            // throw Error(response.message);
         }
         const data = await response.json();
         setFailure("")

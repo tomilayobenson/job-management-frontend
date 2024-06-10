@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom'
 const BrowseJobs = () => {
     const navigate = useNavigate();
     const [jobs, setJobs] = useState([])
+    const [failure, setFailure] = useState("")
     const [viewModal, setViewModal] = useState(false)
     const [editModal, setEditModal] = useState(false)
     const [deleteModal, setDeleteModal] = useState(false)
@@ -17,9 +18,13 @@ const BrowseJobs = () => {
     useEffect(()=> {
         async function getJobs() {
             const response = await fetch(baseURL +"/jobs");
-            if (!response.ok) throw Error(response.message);
+            if (!response.ok){
+                setFailure("There was an error fetching from the database")
+                return
+            }
             const data = await response.json();
             // console.log(data)
+            setFailure("")
             setJobs(data);
         }
         getJobs();
@@ -27,7 +32,11 @@ const BrowseJobs = () => {
     return (
         <div className='container browsejob'>
         <Button className='mb-4' color="primary" onClick={()=>navigate('/create-job')}>Create New Job</Button>
-
+        
+        {failure ? (
+            <Alert color="danger">{failure}</Alert>
+        ): null
+        }
             <table className="table table-striped">
                 <thead>
                     <tr>

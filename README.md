@@ -1,10 +1,10 @@
-# Jobs Management Frontend Application
+# job-management-frontend
 
 This is the frontend application for the job management system. It provides a user-friendly interface for interacting with the backend API to perform various job-related actions.
 
 ## Features
 
-- **Listing All Jobs:** Displaying a list of all available jobs on landing page
+- **Listing All Jobs:** Displaying a list of all available jobs on landing page.
 - **Viewing Job Details:** Viewing detailed information about a specific job in a popup once the View button is clicked.
 - **Posting New Job:** Allowing users to create and post new job listings.
 - **Updating Existing Job:** Providing functionality to update details of existing job listings once the Ediyt button is clicked.

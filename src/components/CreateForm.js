@@ -24,7 +24,8 @@ const handleSubmit = async (values, {resetForm}) => {
     if (!response.ok) {
         setSuccess("")
         setFailure("Unable to submit form")
-        throw Error(response.message);
+        // throw Error(response.message);
+        return
     }
     const data = await response.json();
     resetForm()

@@ -33,7 +33,7 @@ const handleSubmit = async (values, {resetForm}) => {
     if (!response.ok) {
         setSuccess("")
         setFailure("Unable to update job")
-        throw Error(response.message);
+        // throw Error(response.message);
     }
     const data = await response.json();
     setFailure("")
